@@ -141,5 +141,13 @@ public class HomeTask2 {
         //System.out.println("If array has balance point? " + CheckBalance(check1));
         System.out.println("Смещение элементов массива: " + Arrays.toString(arr3) + " на " + k + " позиции.");
         System.out.println(Arrays.toString(RotateArray(arr3, k)));
+<<<<<<< Updated upstream
     }
 }
+=======
+
+            
+        }
+    }
+
+>>>>>>> Stashed changes

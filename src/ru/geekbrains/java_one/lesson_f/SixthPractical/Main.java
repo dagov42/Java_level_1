@@ -12,6 +12,7 @@ public class Main {
         makeFile("1.txt" , makeString(100));
         makeFile("2.txt", makeString(100));
         gumFiles(new String[]{"1.txt", "2.txt"});
+        searchIntoFile("1.txt", "hello");
     }
 
     private static void gumFiles(String[] names) throws IOException {
@@ -44,5 +45,23 @@ public class Main {
             e.printStackTrace();
         }
     }
-}
+    public static void searchIntoFile(String fileName, String word) throws IOException {
+        FileInputStream fileInputStream = new FileInputStream(fileName);
+        int symbol = 0;
+        int index = 0;
+        byte[] wordBytes = word.getBytes();
+        do{
+            symbol = fileInputStream.read();
+            if (wordBytes[index] == symbol){
+               index++;
+               if (index == wordBytes.length){
+                   System.out.println("The word was found");
+                   break;
+               }
+            }else {
+                index = 0;
+            }
+            } while (symbol != -1);
+        }
+    }
 
